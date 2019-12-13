@@ -39,10 +39,14 @@ q3=[
     'results studying type ai concordia'
 ]
 
+#user query or automated query
 USER= True
+#How many results to return
 TOP = 50
+#K and B values for bm25
 K = 1.5
 B = 0.75
+#if Ranker not 'tf-idf' then bm25 is used
 RANKER = 'tf_idf'
 
 #Choose whether to use ai_df values
