@@ -5,4 +5,4 @@ Crawl concordia.ca/research using scrapy and query support for crawled documents
 
 * w_news is compiled dictionaries with news articles
 * no_news is compiled dictionaries without news articles
-* configure with runner.py 
+* configure and run with runner.py 
