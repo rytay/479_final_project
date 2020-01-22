@@ -16,7 +16,7 @@ else:
     ai_df = crawler.get_ai_df()
 
 
-#Queries
+#Example Queries, comment out if not needed
 
 #Which departments have AI research?
 q1=[
@@ -58,8 +58,6 @@ if USER:
     while(True):
            query.user_query(index=inverted_index, ai_df=ai_df, doc_lengths=doc_lengths, url_dict=url_dict, top=TOP , ranker=RANKER , k=K , b=B,use_ai_terms=USE_AI_TERMS);
 else:
-    
-    TOP = 100
     for info in [q1,q2,q3]:
         for q in info:
             query.query_auto(index=inverted_index, ai_df=ai_df, doc_lengths=doc_lengths , url_dict=url_dict , top=TOP ,ranker=RANKER, k=K, b=B,augment=None,result_dir=os.getcwd()+'/results/',query_string=q,use_ai_terms=USE_AI_TERMS)
