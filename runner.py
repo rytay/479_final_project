@@ -40,7 +40,7 @@ q3=[
 ]
 
 #user query or automated query
-USER= True
+USER= False
 #How many results to return
 TOP = 50
 #K and B values for bm25
@@ -56,9 +56,9 @@ AUGMENT = None
 
 if USER:
     while(True):
-           query.user_query(index=inverted_index, ai_df=ai_df, doc_lengths=doc_lengths, url_dict=url_dict, top=TOP , ranker=RANKER , k=K , b=B,use_ai_terms=USE_AI_TERMS);
+           query.do_query(USER, index=inverted_index, ai_df=ai_df, doc_lengths=doc_lengths, url_dict=url_dict, top=TOP , ranker=RANKER , k=K , b=B,use_ai_terms=USE_AI_TERMS);
 else:
     for info in [q1,q2,q3]:
         for q in info:
-            query.query_auto(index=inverted_index, ai_df=ai_df, doc_lengths=doc_lengths , url_dict=url_dict , top=TOP ,ranker=RANKER, k=K, b=B,augment=None,result_dir=os.getcwd()+'/results/',query_string=q,use_ai_terms=USE_AI_TERMS)
+            query.do_query(USER,index=inverted_index, ai_df=ai_df, doc_lengths=doc_lengths , url_dict=url_dict , top=TOP ,ranker=RANKER, k=K, b=B,augment=None,result_dir=os.getcwd()+'/results/',query_string=q,use_ai_terms=USE_AI_TERMS)
     
