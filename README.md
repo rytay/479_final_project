@@ -4,5 +4,5 @@ Crawl concordia.ca/research using scrapy and query support for crawled documents
 * Augmentation with AI specific terms from aitopics.org/search
 
 * w_news is compiled dictionaries with news articles
-* no_news is compiled dictionaries wihout news articles
+* no_news is compiled dictionaries without news articles
 * configure with runner.py 
