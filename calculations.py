@@ -1,19 +1,15 @@
 import math
 
+#Document Frequency
 def df(term,index):
     if term in index:
         return len(set(index[term]))
     else:
         return 0
 
+#document frequency but using the ai terms from aitopics.org
 def df_ai(term, ai_df):
     return ai_df[term]
-
-def cf(term,index):
-    if term in index:
-        return len(index[term])
-    else:
-        return 0
 
 #term fequency of term in document
 def tf(term, doc_id, index):
@@ -28,13 +24,15 @@ def tf(term, doc_id, index):
     else:
         return 0
 
+#term frequency with log weighting
 def tf_weighting(term,doc_id,index):
     term_freq =tf(term,doc_id,index)
     if term_freq != 0:
         return 1 + math.log10(term_freq)
     else:
         return 0
-    
+
+#inverse document frequency with weighting
 def idf_weighting(term,index,doc_lengths):
     if term in index:
         docs_containing = df(term,index)
@@ -44,6 +42,7 @@ def idf_weighting(term,index,doc_lengths):
     else:
         return 0
 
+#idf weighting with ai document freqencies
 def idf_weighting_ai(term,index,ai_df,doc_lengths):
     
     if term in ai_df:
@@ -58,6 +57,7 @@ def idf_weighting_ai(term,index,ai_df,doc_lengths):
     
     return math.log10(total_docs/(docs_containing + 1))
 
+#compute tf_idf_overlap score
 def tf_idf_overlap(query,doc_id, url_dict,index,doc_lengths):
     url = url_dict[doc_id]
     
@@ -70,6 +70,7 @@ def tf_idf_overlap(query,doc_id, url_dict,index,doc_lengths):
 
     return (float(result),url)
 
+#compute tf_idf_overlap score with ai document frequencies
 def tf_idf_overlap_ai(query,doc_id, url_dict,index,doc_lengths, ai_df):
     url = url_dict[doc_id]
     
@@ -82,7 +83,7 @@ def tf_idf_overlap_ai(query,doc_id, url_dict,index,doc_lengths, ai_df):
 
     return (float(result), url)
 
-
+#BM25 scoring
 def bm25(query:list,doc_id, index, url_dict, doc_lengths,k=1.5,b=0.75):
     avg_dl = doc_lengths['avg_dl']
     dl = doc_lengths[doc_id]
@@ -98,6 +99,7 @@ def bm25(query:list,doc_id, index, url_dict, doc_lengths,k=1.5,b=0.75):
         score+= float(idf_term * ((doc_freq * (k + 1)))) / (doc_freq + k * (1 - b + (b * (dl / float(avg_dl) ))))
     return (score ,url)
 
+#BM25 scoring using ai document frequencies
 def bm25_ai(query:list, doc_id, index, ai_df, url_dict, doc_lengths,k=1.5,b=0.75):
     avg_dl = doc_lengths['avg_dl']
     dl = doc_lengths[doc_id]
