@@ -9,7 +9,7 @@ Click==7.0
 cloudpickle==1.2.1
 command-not-found==0.3
 constantly==15.1.0
-cryptography==3.2
+cryptography==3.3.2
 cssselect==1.1.0
 cupshelpers==1.0
 dask==1.2.2
