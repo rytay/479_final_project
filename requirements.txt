@@ -102,7 +102,7 @@ tornado==6.0.2
 Twisted==20.3.0
 ubuntu-drivers-common==0.0.0
 ufw==0.36
-urllib3==1.25.7
+urllib3==1.25.8
 usb-creator==0.3.3
 virtualenv==16.7.8
 w3lib==1.21.0
