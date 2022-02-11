@@ -99,7 +99,7 @@ systemd-python==234
 tblib==1.4.0
 toolz==0.9.0
 tornado==6.0.2
-Twisted==20.3.0
+Twisted==22.1.0
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 urllib3==1.25.7
