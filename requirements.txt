@@ -86,7 +86,7 @@ Repoman==1.0.2
 reportlab==3.4.0
 requests==2.22.0
 requests-unixsocket==0.1.5
-Scrapy==1.8.0
+Scrapy==1.8.2
 screen-resolution-extra==0.0.0
 SecretStorage==2.3.1
 service-identity==18.1.0
