@@ -14,7 +14,7 @@ cssselect==1.1.0
 cupshelpers==1.0
 dask==1.2.2
 defer==1.0.6
-distributed==1.28.1
+distributed==2021.10.0
 distro-info===0.18ubuntu0.18.04.1
 evdev==0.7.0
 gestures==0.2.2
